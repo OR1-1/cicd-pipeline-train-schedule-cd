@@ -80,12 +80,11 @@ pipeline {
             }
 
             step([$class: 'Mailer',
-              // notifyEveryUnstableBuild: true,
-              recipients: "loven.devops@gmail.com",
-              sendToIndividuals: true])
+                // notifyEveryUnstableBuild: true,
+                recipients: "loven.devops@gmail.com",
+                sendToIndividuals: true])
 
             emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
         }
-
     }
 }
