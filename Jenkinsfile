@@ -73,18 +73,10 @@ pipeline {
     }
     post {
         always {
-            // script {
-            //     if (currentBuild.result == null) {
-            //         currentBuild.result = 'SUCCESS'
-            //     }
-            // }
+            // emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
 
-            // step([$class: 'Mailer',
-            //     // notifyEveryUnstableBuild: true,
-            //     recipients: "loven.devops@gmail.com",
-            //     sendToIndividuals: true])
+            emailext body: 'bbbbbbbbbbbbbb', recipientProviders: [upstreamDevelopers(), culprits(), developers(), requestor()], subject: 'sssssssssssss'
 
-            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
         }
     }
 }
