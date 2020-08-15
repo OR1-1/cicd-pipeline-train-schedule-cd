@@ -79,10 +79,9 @@ pipeline {
                 }
             }
             step([$class: 'Mailer',
-              notifyEveryUnstableBuild: true,
+              // notifyEveryUnstableBuild: true,
               recipients: "lovencorpse@gmail.com",
               sendToIndividuals: true])
             }
-
         }
     }
